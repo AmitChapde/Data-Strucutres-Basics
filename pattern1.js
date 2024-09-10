@@ -9,4 +9,4 @@ function pattern1(n) {
     
 }
 
-console.log(pattern1(5));
+pattern1(5);

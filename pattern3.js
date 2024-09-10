@@ -1,7 +1,7 @@
-function pattern2(n) {
+function pattern3(n) {
     for (let i=0 ; i<n ;i++){
         let row="";
-        for(let j=0;j<=i;j++){
+        for(let j=0;j<n-i;j++){
             row+="* "
         }
         console.log(row)
@@ -9,4 +9,4 @@ function pattern2(n) {
     
 }
 
-pattern2(5);
+pattern3(5);
