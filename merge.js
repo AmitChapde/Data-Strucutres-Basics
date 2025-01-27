@@ -3,35 +3,40 @@ function mergeSort(arr){
         return arr;
     }
 
+    //calc mid
     let mid=Math.floor(arr.length/2);
 
-    let left=[]
+    let left=[];
     for(let i=0;i<mid;i++){
-        left.push(arr[i])
+        left.push(arr[i]);
     }
 
-    let right=[];
-    for(let i=mid;i<arr.length;i++){
-        right.push(arr[i]);
+    let right=[]
+    for(let j=mid;j<arr.length;j++){
+        right.push(arr[j]);
     }
-    let sortedLeft=mergeSort(left);
-    let sortedRight=mergeSort(right);
 
-    return merge(sortedLeft,sortedRight);
+    let leftSorted=mergeSort(left);
+    let rightSorted=mergeSort(right);
+
+    return merge(leftSorted,rightSorted);
+
 }
 
 function merge(left,right){
-    let i=0,j=0;
-    const result=[];
+    let result=[];
+    let i=0;
+    let j=0;
     while(i<left.length && j<right.length){
         if(left[i]<right[j]){
-            result.push(left[i]);
+            result.push(left[i])
             i++;
         }else{
-            result.push(right[j]);
+            result.push(right[j])
             j++;
         }
     }
+
     while(i<left.length){
         result.push(left[i]);
         i++;
@@ -43,7 +48,7 @@ function merge(left,right){
     }
 
     return result;
-
+    
 
 }
 

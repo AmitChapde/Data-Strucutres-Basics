@@ -4,11 +4,11 @@ function calcSuffixSum(arr){
     sufArr[n-1]=arr[n-1];
 
     for(let i=n-2;i>=0;i--){
-        sufArr[i]=sufArr[i+1]+arr[i];
+        sufArr[i]=sufArr[i+1]*arr[i];
     }
     return sufArr;
 }
 
 
-let arr = [10, 20, 30, 40, 50];
+let arr = [1,2,3,4];
 console.log(calcSuffixSum(arr));
